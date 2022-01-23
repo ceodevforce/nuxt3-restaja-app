@@ -1,29 +1,8 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3: Restaja
+***
 
-We recommend to look at the [documentation](https://v3.nuxtjs.org).
+## Developer: Vantol Bennett
 
-## Setup
+This repo will be awesome!
 
-Make sure to install the dependencies
-
-```bash
-yarn install
-```
-
-## Development
-
-Start the development server on http://localhost:3000
-
-```bash
-yarn dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-yarn build
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
+Checkout the [documentation](https://v3.nuxtjs.org).
