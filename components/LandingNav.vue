@@ -1,3 +1,12 @@
+<script setup>
+import { ref } from 'vue'
+import { useStore } from '../stores/user';
+
+  const isAuthenticated = ref(null)
+  const { user } = useStore()
+
+  console.log(user)
+</script>
 <template>
   <div class="bg-white">
     <nav class="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4">
