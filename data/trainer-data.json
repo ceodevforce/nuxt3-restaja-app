@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "trainerName": "Joogn Young",
+    "trainerEmail": "gymrest@gmail.com",
+    "rank": 65,
+    "trainerImage": "https://images.unsplash.com/photo-1584952811565-c4c4031805a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3ltJTIwdHJhaW5lcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "certification": "NCCA Accredited",
+    "speciality": "Yoga, Pilates, Zumba, Crossfit, Bodybuilding",
+    "yearsOfExperience": "10 years",
+    "location": "New York, NY",
+    "price": "57",
+    "rating": "4.5",
+    "reviews": "20",
+    "description": "My passion is to assist others on their journey"
+  },
+  {
+    "id": "2",
+    "trainerName": "Alice C",
+    "trainerEmail": "alice.gymrest@gmail.com",
+    "rank": 65,
+    "trainerImage": "https://images.unsplash.com/flagged/photo-1566064352554-f36ef0ef23b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "certification": "NCCA Accredited",
+    "speciality": "Yoga, Pilates, Zumba, Crossfit, Bodybuilding",
+    "yearsOfExperience": "9 years",
+    "location": "Chicago, IL",
+    "price": "47",
+    "rating": "4.5",
+    "reviews": "20",
+    "description": "I am a certified personal trainer and I am passionate about helping others achieve their goals"
+  },
+  {
+    "id": "3",
+    "trainerName": "Wayne W.",
+    "trainerEmail": "wayne.gymrest@gmail.com",
+    "rank": 95,
+    "trainerImage": "https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z3ltJTIwdHJhaW5lcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    "certification": "NCCA Accredited",
+    "speciality": "Crossfit, Bodybuilding, Martial Arts",
+    "yearsOfExperience": "4 years",
+    "location": "Chicago, IL",
+    "price": "67",
+    "rating": "4.5",
+    "reviews": "20",
+    "description": "I am a certified personal trainer and I am passionate about helping others achieve their goals"
+  }
+]
