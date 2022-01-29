@@ -7,18 +7,11 @@ const { supabase } = useSupabase()
 
 const user = supabase.auth.user()
 console.log({user})
+
 store.$state = {
   user: user
 }
 
-function userCheck() {
-  if (user) {
-    router.push('/user')
-  }
-}
-onMounted(() => {
-  userCheck()
-})
 
 </script>
 <template>

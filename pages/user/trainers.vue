@@ -1,24 +1,12 @@
 <script setup>
-//TODO: Add subscribe using Pinia to persist the trainer data
-
-const { data } = await useAsyncData('trainer', () => $fetch('/api/trainer'))
-
 import { useStore } from '../../stores/user'
-import { useTrainers } from '../../stores/trainers';
-
 
 const route = useRoute()
 
 
 const store = useStore()
-const trainer = useTrainers()
-
-
-// console.log('UserDash',trainer.trainers)
-console.log({data})
-
-
 const loggedUser = store.user
+
 
 function enableCustomLayout() {
   if (!loggedUser) {
@@ -35,11 +23,9 @@ onMounted(() => {
 definePageMeta({
   layout: ref(false)
 })
-
 </script>
 <template>
     <div>
-        <h1>User Dashboard</h1>
-        <TrainerList :trainer="data"/>
+        <h1>Trainers</h1>
     </div>
 </template>

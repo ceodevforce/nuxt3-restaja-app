@@ -1,11 +1,12 @@
 <script setup>
+//FIXME: Change between login and signup - user should go to dashboard after login
+
 import { useTrainers } from '../stores/trainers'
 import { useStore } from '../stores/user'
 
 const { data } = await useAsyncData('trainer', () => $fetch('/api/trainer'))
 
 const route = useRoute()
-console.log('route', route.meta)
 
 const trainer = useTrainers()
 const store = useStore()
@@ -14,7 +15,13 @@ trainer.$state = {
   trainers: data,
 }
 
+
 const loggedUser = store.user
+
+
+
+
+
 function enableCustomLayout() {
   if (!loggedUser) {
     route.meta.layout.value = 'default'
@@ -23,9 +30,20 @@ function enableCustomLayout() {
   }
 }
 
+function userCheck() {
+  if (user) {
+    router.push('/user')
+  }
+}
+
 // watch(route, enableCustomLayout())
 
 onMounted(() => {
+  enableCustomLayout(),
+  userCheck()
+})
+
+watch(route, () => {
   enableCustomLayout()
 })
 
