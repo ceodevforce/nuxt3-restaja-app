@@ -1,13 +1,14 @@
 <template>
-    
+    <div>
         <div class="2xl:container 2xl:mx-auto">
-            <div class="bg-white rounded shadow-lg py-5 px-7">
+            <div class="bg-gray-200 rounded shadow-lg py-5 px-7">
                 <nav class="flex justify-between">
                     <div class="flex items-center space-x-3 lg:pr-16 pr-6">
                         <img class="cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-1-svg1.svg" alt="circle" />                       
                         <h2 class="font-normal text-2xl leading-6 text-gray-800">OvonRueden</h2>
+                                            <div class=" h-full w-2 border-l border-gray-400"></div>
+
                     </div> 
-    
                     <ul class="hidden md:flex flex-auto space-x-2">
                         <li onclick="selected()" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white bg-indigo-600 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">Collections</li>
                         <li onclick="selected()" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-gray-600 border border-white bg-gray-50 cursor-pointer px-3 py-2.5 font-normal text-xs leading-3 shadow-md rounded">Arts</li>
@@ -46,6 +47,6 @@
                 </div>
             </div>
         </div>
-      
+      </div>
     
 </template>

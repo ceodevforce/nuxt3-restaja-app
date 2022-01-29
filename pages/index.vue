@@ -1,15 +1,38 @@
 <script setup>
-import { useTrainers } from "../stores/trainers";
+import { useTrainers } from '../stores/trainers'
+import { useStore } from '../stores/user'
 
-const { data } = await useAsyncData("trainer", () => $fetch("/api/trainer"));
+const { data } = await useAsyncData('trainer', () => $fetch('/api/trainer'))
 
-const trainer = useTrainers();
+const route = useRoute()
+console.log('route', route.meta)
+
+const trainer = useTrainers()
+const store = useStore()
 
 trainer.$state = {
   trainers: data,
-};
+}
 
-console.log(trainer);
+const loggedUser = store.user
+function enableCustomLayout() {
+  if (!loggedUser) {
+    route.meta.layout.value = 'default'
+  } else {
+      route.meta.layout.value = 'custom-user'
+  }
+}
+
+// watch(route, enableCustomLayout())
+
+onMounted(() => {
+  enableCustomLayout()
+})
+
+definePageMeta({
+  title: 'RestaJa Gym',
+  layout: ref(false),
+})
 </script>
 <template>
   <div>
@@ -29,19 +52,15 @@ console.log(trainer);
           <p tabindex="0" class="text-indigo-700 uppercase text-2xl mb-4">
             Rise above being mediocre
           </p>
-          <h1
-            tabindex="0"
-            class="text-indigo-700 text-4xl lg:text-6xl font-black mb-8"
-          >
-            Get to Peak Fitness with our trainers and diet plans
+          <h1 tabindex="0" class="text-indigo-700 text-4xl lg:text-6xl font-black mb-8">
+            Get to Peak Fitness 
           </h1>
           <p tabindex="0" class="text-gray-800 font-regular mb-8">
-            Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.    
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+            eu fugiat nulla pariatur.
           </p>
           <div
             class="bg-white lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg"
@@ -58,8 +77,6 @@ console.log(trainer);
                   placeholder="Trainer Name"
                 />
               </div>
-              
-              
             </div>
             <button
               role="button"
@@ -101,11 +118,9 @@ console.log(trainer);
         >
           Subscribe
         </h1>
-        <p
-          class="text-base leading-normal text-gray-600 text-center xl:text-left"
-        >
-          Whether article spirits new her covered hastily sitting her. Money
-          witty books nor son add.
+        <p class="text-base leading-normal text-gray-600 text-center xl:text-left">
+          Whether article spirits new her covered hastily sitting her. Money witty books
+          nor son add.
         </p>
         <div class="flex items-stretch mt-12">
           <input
@@ -147,17 +162,15 @@ console.log(trainer);
                 alt=""
               />
             </div>
-            <div
-              class="flex mt-12 flex-col items-center lg:items-end md:w-8/12"
-            >
+            <div class="flex mt-12 flex-col items-center lg:items-end md:w-8/12">
               <h1 class="focus:outline-none text-xl font-bold leading-5">
                 Create a Wallet
               </h1>
               <h2
                 class="focus:outline-none text-gray-500 mt-3 pl-3 text-center md:text-right text-base leading-6 tracking-wide"
               >
-                Create a wallet by linking a payment method that you’re
-                comfortable with. Paypal, Visa and more
+                Create a wallet by linking a payment method that you’re comfortable with.
+                Paypal, Visa and more
               </h2>
             </div>
             <div aria-label="transactions" role="img">
@@ -184,17 +197,14 @@ console.log(trainer);
               />
             </div>
 
-            <div
-              class="flex mt-6 flex-col items-center md:items-start md:w-8/12"
-            >
+            <div class="flex mt-6 flex-col items-center md:items-start md:w-8/12">
               <h1 class="focus:outline-none text-xl font-bold leading-5">
                 SignUp for an Account
               </h1>
               <h2
                 class="focus:outline-none text-gray-500 mt-3 text-base leading-6 tracking-wide"
               >
-                Sign up on our website and opt for a program that suits you the
-                best .
+                Sign up on our website and opt for a program that suits you the best .
               </h2>
             </div>
             <div aria-label="wallet" role="img">
@@ -211,17 +221,15 @@ console.log(trainer);
                 alt=""
               />
             </div>
-            <div
-              class="flex mt-6 flex-col items-center md:items-start md:w-8/12"
-            >
+            <div class="flex mt-6 flex-col items-center md:items-start md:w-8/12">
               <h1 class="focus:outline-none text-xl font-bold leading-5">
                 Start your Transactions
               </h1>
               <h2
                 class="focus:outline-none text-gray-500 mt-3 text-base leading-6 tracking-wide"
               >
-                Start transactions right away. No more complicated process for
-                anything else.
+                Start transactions right away. No more complicated process for anything
+                else.
               </h2>
             </div>
           </div>
@@ -240,11 +248,8 @@ console.log(trainer);
             <h1 class="text-xl text-center tracking-wide leading-5 font-bold">
               SignUp for an Account
             </h1>
-            <h2
-              class="text-gray-500 mt-3 text-center text-base leading-6 tracking-wide"
-            >
-              Sign up on our website and opt for a program that suits you the
-              best .
+            <h2 class="text-gray-500 mt-3 text-center text-base leading-6 tracking-wide">
+              Sign up on our website and opt for a program that suits you the best .
             </h2>
           </div>
           <img
@@ -263,8 +268,8 @@ console.log(trainer);
             <h2
               class="text-gray-500 mt-3 pl-3 text-center text-base leading-6 tracking-wide"
             >
-              Create a wallet by linking a payment method that you’re
-              comfortable with. Paypal, Visa and more
+              Create a wallet by linking a payment method that you’re comfortable with.
+              Paypal, Visa and more
             </h2>
           </div>
           <img
@@ -277,17 +282,13 @@ console.log(trainer);
             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/3_step_center_aligned_how_it_worksSvg6.svg"
             alt=""
           />
-          <div
-            class="flex mt-10 flex-col items-center md:items-start md:w-8/12"
-          >
+          <div class="flex mt-10 flex-col items-center md:items-start md:w-8/12">
             <h1 class="text-xl text-center tracking-wide leading-5 font-bold">
               Start your Transactions
             </h1>
-            <h2
-              class="text-gray-500 mt-3 text-center text-base leading-6 tracking-wide"
-            >
-              Start transactions right away. No more complicated process for
-              anything else.
+            <h2 class="text-gray-500 mt-3 text-center text-base leading-6 tracking-wide">
+              Start transactions right away. No more complicated process for anything
+              else.
             </h2>
           </div>
         </div>
@@ -295,3 +296,12 @@ console.log(trainer);
     </div>
   </div>
 </template>
+<style scoped>
+  .heroWorks{
+    background: #fff url(https://images.unsplash.com/photo-1610554843876-9be9b896b2d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60); 
+    background-position: center; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+
+  }
+</style>
