@@ -7,6 +7,7 @@ import { useStore } from '../stores/user'
 const { data } = await useAsyncData('trainer', () => $fetch('/api/trainer'))
 
 const route = useRoute()
+const router = useRouter()
 
 const trainer = useTrainers()
 const store = useStore()
@@ -18,20 +19,16 @@ trainer.$state = {
 
 const loggedUser = store.user
 
-
-
-
-
-function enableCustomLayout() {
-  if (!loggedUser) {
-    route.meta.layout.value = 'default'
-  } else {
-      route.meta.layout.value = 'custom-user'
-  }
-}
+// function enableCustomLayout() {
+//   if (!loggedUser) {
+//     route.meta.layout.value = 'default'
+//   } else {
+//       route.meta.layout.value = 'custom-user'
+//   }
+// }
 
 function userCheck() {
-  if (user) {
+  if (loggedUser) {
     router.push('/user')
   }
 }
@@ -39,13 +36,13 @@ function userCheck() {
 // watch(route, enableCustomLayout())
 
 onMounted(() => {
-  enableCustomLayout(),
+  // enableCustomLayout(),
   userCheck()
 })
 
-watch(route, () => {
-  enableCustomLayout()
-})
+// watch(route, () => {
+//   enableCustomLayout()
+// })
 
 definePageMeta({
   title: 'RestaJa Gym',
@@ -53,6 +50,7 @@ definePageMeta({
 })
 </script>
 <template>
+  <NuxtLayout>
   <div>
     <div class="h-screen">
       <div class="pt-32 lg:flex items-center relative z-10 container mx-auto">
@@ -114,6 +112,12 @@ definePageMeta({
           </div>
         </div>
       </div>
+    </div>
+    <div class="container flex justify-center mx-auto pt-16">
+                    <div>
+                        <p class="text-gray-500 text-lg text-center font-normal pb-3">BUILDING TEAM of Trainers</p>
+                        <h1 class="xl:text-4xl text-3xl text-center text-gray-800 font-extrabold pb-6 sm:w-4/6 w-5/6 mx-auto">The Talented People Behind the Scenes of the RestaJa Gym</h1>
+                    </div>
     </div>
 
     <TrainerList :trainer="data" />
@@ -313,6 +317,7 @@ definePageMeta({
       </div>
     </div>
   </div>
+  </NuxtLayout>
 </template>
 <style scoped>
   .heroWorks{

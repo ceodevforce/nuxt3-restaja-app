@@ -17,7 +17,7 @@
                                         <rect x="14" y="14" width="6" height="6" rx="1" />
                                     </svg>
                                 </div>
-                                <a href="javascript:void(0)" class="ml-2">Dashboard</a>
+                                <NuxtLink to="/user" class="ml-2">Dashboard</NuxtLink>
                             </div>
                         </li>
                         <li class="pl-6 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
@@ -36,7 +36,7 @@
                                     <polyline points="8 16 10 10 16 8 14 14 8 16" />
                                     <circle cx="12" cy="12" r="9" />
                                 </svg>
-                                <NuxtLink to=""  class="ml-2">Trainers</NuxtLink>
+                                <NuxtLink to="/user/trainers"  class="ml-2">Trainers</NuxtLink>
                             </div>
                         </li>
                         

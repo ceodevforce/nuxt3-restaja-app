@@ -13,6 +13,7 @@ const handleSubmit = () => {
 
 </script>
 <template>
+
   <div
     class="py-16 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container"
   >

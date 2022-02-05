@@ -20,7 +20,7 @@ const signOut = async () => {
                 <nav class="flex justify-between">
                     <div class="flex items-center space-x-3 lg:pr-16 pr-6">
                         <img class="cursor-pointer" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/header-1-svg1.svg" alt="circle" />                       
-                        <h2 class="font-normal text-2xl leading-6 text-gray-800">OvonRueden</h2>
+<!--                        <h2 class="font-normal text-2xl leading-6 text-gray-800">OvonRueden</h2>-->
                                             <div class=" h-full w-2 border-l border-gray-400"></div>
 
                     </div> 
